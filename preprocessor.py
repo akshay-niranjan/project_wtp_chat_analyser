@@ -13,7 +13,7 @@ def preprocess(data):
     df['message_date'] = df['message_date'].str.replace(" -", "")  # Remove extra "-"
     df['message_date'] = df['message_date'].str.strip()
 
-    df['message_date']=pd.to_datetime(df['message_date'],format="%d/%m/%y, %I:%M %p")
+    df['message_date']=pd.to_datetime(df['message_date'],format="mixed")
     df.rename(columns={'message_date':'date'},inplace=True)
 
     # separate users and messages
